@@ -58,4 +58,22 @@
         <item>Salaried - Government</item>
     </string-array>
 
+    <string-array name="propertysubtypes">
+        <item>Bungalow</item>
+        <item>Apartment</item>
+        <item>Condominium</item>
+        <item>Townhouse</item>
+        <item>Terrace</item>
+    </string-array>
+
+    <string-array name="yesno">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="propertyconstructionstatus">
+        <item>Completed</item>
+        <item>Under construction</item>
+    </string-array>
+
 </resources>
