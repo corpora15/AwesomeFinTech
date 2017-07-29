@@ -1,7 +1,7 @@
 package com.techclutch.finassist.uploaddocuments;
 
 /**
- * Created by Madzirin on 7/30/2017.
+ * Created by madzirin on 7/30/2017.
  */
 
 public class DocumentItem {
@@ -12,6 +12,7 @@ public class DocumentItem {
     public DocumentItem(String name, Integer imageResource) {
         this.name = name;
         this.imageResource = imageResource;
+        this.isCompleted = false;
     }
 
     public String getName() {
