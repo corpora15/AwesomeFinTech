@@ -43,7 +43,6 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
         List<String> monthlyPayment = Arrays.asList("500", "400", "300", "500", "400");
         List<String> totalPayment = Arrays.asList("5055", "40066", "30250", "55200", "40110");
 
-
         for(int i = 0; i < images.length; ++i) {
             items.add(new BankTypeItem(bankName[i], interestRate[i], monthlyPayment.get(i), totalPayment.get(i), icons.getResourceId(i, 0)));
         }

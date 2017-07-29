@@ -26,6 +26,7 @@ import com.microblink.recognizers.settings.RecognizerSettings;
 import com.microblink.results.date.Date;
 
 import com.techclutch.finassist.banktypes.BankTypeActivity;
+import com.techclutch.finassist.dummy.UserDataTon;
 import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 import com.techclutch.finassist.dummy.DummyContent;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
@@ -38,12 +39,7 @@ public class LandingActivity extends AppCompatActivity
         LoanTypeFragment.OnListFragmentInteractionListener, OnLoanTypePopupSaved {
 
     private static final int MY_REQUEST_CODE = 1500;
-    private String mFullName = "";
-    private String mNRICNumber = "";
-    private String mAddress = "";
-    private String mSex = "";
-    private String mTitle = "";
-    private Date mBirthDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,12 +103,12 @@ public class LandingActivity extends AppCompatActivity
                         // you can use getters of MyKadRecognitionResult class to
                         // obtain scanned information
                         if (my_result.isValid() && !my_result.isEmpty()) {
-                            mFullName = my_result.getOwnerFullName();
-                            mNRICNumber = my_result.getNRICNumber();
-                            mBirthDate = my_result.getOwnerBirthDate();
-                            mAddress = my_result.getOwnerAddress();
-                            mSex = my_result.getOwnerSex();
-                            mTitle = my_result.getTitle();
+                            UserDataTon.Get().mFullName = my_result.getOwnerFullName();
+                            UserDataTon.Get().mNRICNumber = my_result.getNRICNumber();
+                            UserDataTon.Get().mBirthDate = my_result.getOwnerBirthDate();
+                            UserDataTon.Get().mAddress = my_result.getOwnerAddress();
+                            UserDataTon.Get().mSex = my_result.getOwnerSex();
+                            UserDataTon.Get().mTitle = my_result.getTitle();
 
 
                         } else {
