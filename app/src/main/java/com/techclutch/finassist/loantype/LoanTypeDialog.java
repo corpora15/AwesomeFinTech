@@ -2,11 +2,10 @@ package com.techclutch.finassist.loantype;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,9 +50,10 @@ public class LoanTypeDialog {
         initView();
         dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(true);
+        dialog.setCancelable(false);
         dialog.setContentView(view);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         dialog.show();
     }
 
@@ -69,11 +69,11 @@ public class LoanTypeDialog {
 
     @OnClick(R.id.btn_ok)
     void onOkClicked() {
-        if(TextUtils.isEmpty(etPropertyPrices.getText())) {
+        if (TextUtils.isEmpty(etPropertyPrices.getText())) {
             etPropertyPrices.setError("Please enter property price!");
             return;
         }
-        if(TextUtils.isEmpty(etLoanAmount.getText())) {
+        if (TextUtils.isEmpty(etLoanAmount.getText())) {
             etLoanAmount.setError("Please enter loan amount!");
             return;
         }

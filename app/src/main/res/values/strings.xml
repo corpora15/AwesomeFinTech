@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">FinAssist</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="app_name">loanr</string>
     <string name="title_activity_landing">LandingActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
