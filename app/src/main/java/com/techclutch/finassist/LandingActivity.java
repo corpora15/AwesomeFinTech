@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +15,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.microblink.activity.ScanCard;
+import com.microblink.recognizers.BaseRecognitionResult;
+import com.microblink.recognizers.RecognitionResults;
+import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
+import com.microblink.recognizers.blinkid.malaysia.MyKadRecognizerSettings;
+import com.microblink.recognizers.settings.RecognitionSettings;
+import com.microblink.recognizers.settings.RecognizerSettings;
+import com.microblink.results.date.Date;
 
 import com.techclutch.finassist.banktypes.BankTypeActivity;
 import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
@@ -29,6 +37,14 @@ public class LandingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LoanStatusFragment.OnListFragmentInteractionListener,
         LoanTypeFragment.OnListFragmentInteractionListener, OnLoanTypePopupSaved {
 
+    private static final int MY_REQUEST_CODE = 1500;
+    private String mFullName = "";
+    private String mNRICNumber = "";
+    private String mAddress = "";
+    private String mSex = "";
+    private String mTitle = "";
+    private Date mBirthDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +56,22 @@ public class LandingActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                // Intent for ScanCard Activity
+                Intent intent = new Intent(LandingActivity.this, ScanCard.class);
+
+                // set your licence key
+                // obtain your licence key at http://microblink.com/login or
+                // contact us at http://help.microblink.com
+                intent.putExtra(ScanCard.EXTRAS_LICENSE_KEY, "NJFXFTS6-VBPLGNKL-I3KE4K5R-E565OJBB-WZT4QLJR-GALPJ5ZV-BMS2JUL5-35NYGZ6L");
+
+                RecognitionSettings settings = new RecognitionSettings();
+                // setup array of recognition settings (described in chapter "Recognition
+                // settings and results")
+                settings.setRecognizerSettingsArray(setupSettingsArray());
+                intent.putExtra(ScanCard.EXTRAS_RECOGNITION_SETTINGS, settings);
+
+                // Starting Activity
+                startActivityForResult(intent, MY_REQUEST_CODE);
             }
         });
 
@@ -54,6 +84,45 @@ public class LandingActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         initView();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == MY_REQUEST_CODE) {
+            if (resultCode == ScanCard.RESULT_OK && data != null) {
+                // perform processing of the data here
+
+                // for example, obtain parcelable recognition result
+                Bundle extras = data.getExtras();
+                RecognitionResults result = data.getParcelableExtra(ScanCard.EXTRAS_RECOGNITION_RESULTS);
+
+                // get array of recognition results
+                BaseRecognitionResult[] resultArray = result.getRecognitionResults();
+                for (BaseRecognitionResult baseResult : resultArray) {
+                    if (baseResult instanceof MyKadRecognitionResult) {
+                        MyKadRecognitionResult my_result = (MyKadRecognitionResult) baseResult;
+
+                        // you can use getters of MyKadRecognitionResult class to
+                        // obtain scanned information
+                        if (my_result.isValid() && !my_result.isEmpty()) {
+                            mFullName = my_result.getOwnerFullName();
+                            mNRICNumber = my_result.getNRICNumber();
+                            mBirthDate = my_result.getOwnerBirthDate();
+                            mAddress = my_result.getOwnerAddress();
+                            mSex = my_result.getOwnerSex();
+                            mTitle = my_result.getTitle();
+
+
+                        } else {
+                            // not all relevant data was scanned, ask user
+                            // to try again
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void initView() {
@@ -138,5 +207,12 @@ public class LandingActivity extends AppCompatActivity
         //call bank type activity
         Intent intent = new Intent(this, BankTypeActivity.class);
         startActivity(intent);
+    }
+    private RecognizerSettings[] setupSettingsArray() {
+        MyKadRecognizerSettings sett = new MyKadRecognizerSettings();
+
+        // now add sett to recognizer settings array that is used to configure
+        // recognition
+        return new RecognizerSettings[] { sett };
     }
 }

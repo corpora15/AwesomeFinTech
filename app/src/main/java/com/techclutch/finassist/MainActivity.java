@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.microblink.util.RecognizerCompatibility;
+import com.microblink.util.RecognizerCompatibilityStatus;
 
 import OCR.TessOCR;
 import butterknife.BindView;
@@ -28,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        // check if BlinkID is supported on the device
+        RecognizerCompatibilityStatus supportStatus = RecognizerCompatibility.getRecognizerCompatibilityStatus(this);
+        if (supportStatus != RecognizerCompatibilityStatus.RECOGNIZER_SUPPORTED) {
+            Toast.makeText(this, "BlinkID is not supported! Reason: " + supportStatus.name(), Toast.LENGTH_LONG).show();
+        }
     }
 
     @OnClick(R.id.fab)
