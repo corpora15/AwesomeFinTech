@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">FinAssist</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_landing">LandingActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--Loan types-->
+    <string name="loan_type_mortgate">Mortgage Loan</string>
+    <string name="loan_type_hire_purchase">Hire Purchase Loan</string>
+    <string name="loan_type_personal">Personal Loan</string>
+    <string name="loan_type_renovation">Renovation Loan</string>
+    <string name="loan_type_furnishing">Furnishing Loan</string>
+    <string name="loan_type_moving">Moving Loan</string>
+
+    <!--Bank List-->
+    <string name="bank_rhb">RHB</string>
+    <string name="bank_cimb">CIMB</string>
+    <string name="bank_maybank">Maybank</string>
+    <string name="bank_public_bank">Public Bank</string>
+    <string name="bank_ambank">AmBank</string>
 </resources>

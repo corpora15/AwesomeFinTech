@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="loan_types">
+        <item>@string/loan_type_mortgate</item>
+        <item>@string/loan_type_hire_purchase</item>
+        <item>@string/loan_type_personal</item>
+        <item>@string/loan_type_furnishing</item>
+        <item>@string/loan_type_moving</item>
+        <item>@string/loan_type_renovation</item>
+    </string-array>
+
+    <integer-array name="loan_types_images">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_directions_car</item>
+        <item>@drawable/ic_person</item>
+        <item>@drawable/ic_child_friendly</item>
+        <item>@drawable/ic_shopping_cart</item>
+        <item>@drawable/ic_account_balance</item>
+    </integer-array>
+
+    <string-array name="bank_list">
+        <item>@string/bank_rhb</item>
+        <item>@string/bank_cimb</item>
+        <item>@string/bank_maybank</item>
+        <item>@string/bank_public_bank</item>
+        <item>@string/bank_ambank</item>
+    </string-array>
+
+    <!--todo replace with proper bank logos-->
+    <integer-array name="bank_list_images">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_directions_car</item>
+        <item>@drawable/ic_person</item>
+        <item>@drawable/ic_child_friendly</item>
+        <item>@drawable/ic_shopping_cart</item>
+    </integer-array>
+
+    <string-array name="bank_list_interest_rates">
+        <item>4.25</item>
+        <item>4.3</item>
+        <item>4.4</item>
+        <item>4.4</item>
+        <item>4.3</item>
+    </string-array>
+
+    <string-array name="tenure">
+        <item>Loan Tenure</item>
+        <item>20 years</item>
+        <item>25 years</item>
+        <item>30 years</item>
+        <item>35 years</item>
+    </string-array>
+
+    <string-array name="employment">
+        <item>Employment</item>
+        <item>Salaried - Private</item>
+        <item>Salaried - Government</item>
+    </string-array>
+
+</resources>
