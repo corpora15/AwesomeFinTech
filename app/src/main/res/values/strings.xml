@@ -22,4 +22,5 @@
     <string name="bank_maybank">Maybank</string>
     <string name="bank_public_bank">Public Bank</string>
     <string name="bank_ambank">AmBank</string>
+    <string name="title_activity_home_questionaire">HomeQuestionaireActivity</string>
 </resources>

@@ -69,8 +69,6 @@
             android:text="Cancel"
             android:layout_toLeftOf="@id/btn_ok"/>
 
-
-
     </RelativeLayout>
 
 </LinearLayout>
