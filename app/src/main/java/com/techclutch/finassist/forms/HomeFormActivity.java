@@ -50,8 +50,7 @@ public class HomeFormActivity extends AppCompatActivity {
         etSex.setText(UserDataTron.Get().GetSex());
         etTitle.setText(UserDataTron.Get().GetTitle());
 
-        String dateStr = UserDataTron.Get().mBirthDate.getDay() + "/" + UserDataTron.Get().mBirthDate.getMonth() + "/" + UserDataTron.Get().mBirthDate.getYear();
-        etDOB.setText(dateStr);
+        etDOB.setText(UserDataTron.Get().GetDateOfBirth("-"));
     }
 
     @OnClick(R.id.btn_ok)
