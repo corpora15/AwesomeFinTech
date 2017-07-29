@@ -23,10 +23,9 @@ import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognizerSettings;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
-import com.microblink.results.date.Date;
 
 import com.techclutch.finassist.banktypes.BankTypeActivity;
-import com.techclutch.finassist.dummy.UserDataTon;
+import com.techclutch.finassist.dummy.UserDataTron;
 import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 import com.techclutch.finassist.dummy.DummyContent;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
@@ -103,12 +102,12 @@ public class LandingActivity extends AppCompatActivity
                         // you can use getters of MyKadRecognitionResult class to
                         // obtain scanned information
                         if (my_result.isValid() && !my_result.isEmpty()) {
-                            UserDataTon.Get().mFullName = my_result.getOwnerFullName();
-                            UserDataTon.Get().mNRICNumber = my_result.getNRICNumber();
-                            UserDataTon.Get().mBirthDate = my_result.getOwnerBirthDate();
-                            UserDataTon.Get().mAddress = my_result.getOwnerAddress();
-                            UserDataTon.Get().mSex = my_result.getOwnerSex();
-                            UserDataTon.Get().mTitle = my_result.getTitle();
+                            UserDataTron.Get().mFullName = my_result.getOwnerFullName();
+                            UserDataTron.Get().mNRICNumber = my_result.getNRICNumber();
+                            UserDataTron.Get().mBirthDate = my_result.getOwnerBirthDate();
+                            UserDataTron.Get().mAddress = my_result.getOwnerAddress();
+                            UserDataTron.Get().mSex = my_result.getOwnerSex();
+                            UserDataTron.Get().mTitle = my_result.getTitle();
 
 
                         } else {

@@ -14,6 +14,7 @@ import android.widget.Spinner;
 
 import com.techclutch.finassist.LandingActivity;
 import com.techclutch.finassist.R;
+import com.techclutch.finassist.forms.HomeFormActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,6 +72,7 @@ public class HomeQuestionaireActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_ok)
     void onOkClicked() {
-
+        Intent intent = new Intent(this, HomeFormActivity.class);
+        startActivity(intent);
     }
 }
