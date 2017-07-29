@@ -7,12 +7,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.techclutch.finassist.R;
-import com.techclutch.finassist.callbacks.OnLoanTypePopupSaved;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +24,8 @@ import butterknife.OnClick;
 
 public class LoanTypeDialog {
 
-    OnLoanTypePopupSaved callback;
+    private OnLoanTypePopupSaved callback;
+    private Context context;
     private Dialog dialog;
 
     @BindView(R.id.et_property_price)
@@ -43,6 +44,7 @@ public class LoanTypeDialog {
     Button btnOk;
 
     public void showDialog(Context context, OnLoanTypePopupSaved callback) {
+        this.context = context;
         this.callback = callback;
         View view = View.inflate(context, R.layout.layout_mortgage_questions, null);
         ButterKnife.bind(this, view);
@@ -51,8 +53,18 @@ public class LoanTypeDialog {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(view);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         dialog.show();
+    }
+
+    private void initView() {
+        String[] tenure = context.getResources().getStringArray(R.array.tenure);
+        spTenure.setAdapter(new ArrayAdapter(context,
+                android.R.layout.simple_dropdown_item_1line, tenure));
+
+        String[] employment = context.getResources().getStringArray(R.array.employment);
+        spTenure.setAdapter(new ArrayAdapter(context,
+                android.R.layout.simple_dropdown_item_1line, employment));
     }
 
     @OnClick(R.id.btn_ok)

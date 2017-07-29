@@ -1,5 +1,6 @@
 package com.techclutch.finassist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -16,7 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.techclutch.finassist.callbacks.OnLoanTypePopupSaved;
+import com.techclutch.finassist.banktypes.BankTypeActivity;
+import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 import com.techclutch.finassist.dummy.DummyContent;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
 import com.techclutch.finassist.loantype.LoanTypeDialog;
@@ -133,6 +135,8 @@ public class LandingActivity extends AppCompatActivity
 
     @Override
     public void setData(String propertyPrice, String loanAmount, String tenure, String income, String employment) {
-
+        //call bank type activity
+        Intent intent = new Intent(this, BankTypeActivity.class);
+        startActivity(intent);
     }
 }

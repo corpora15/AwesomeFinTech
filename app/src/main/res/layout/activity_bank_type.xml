@@ -6,15 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.techclutch.finassist.banktypes.BankTypeActivity">
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/list"-->
-        <!--android:name="com.techclutch.finassist.LoanStatusFragment"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginLeft="16dp"-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--app:layoutManager="LinearLayoutManager"-->
-        <!--tools:context="com.techclutch.finassist.loanstatus.LoanStatusFragment"-->
-        <!--tools:listitem="@layout/fragment_loanstatus" />-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layoutManager="LinearLayoutManager" />
 
 </android.support.constraint.ConstraintLayout>
