@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCallback {
 
@@ -24,7 +25,7 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_type);
-
+        ButterKnife.bind(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new BankTypeAdapter(this, getBankList(), this));
     }

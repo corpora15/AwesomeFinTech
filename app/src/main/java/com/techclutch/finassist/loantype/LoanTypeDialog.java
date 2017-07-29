@@ -48,7 +48,7 @@ public class LoanTypeDialog {
         this.callback = callback;
         View view = View.inflate(context, R.layout.layout_mortgage_questions, null);
         ButterKnife.bind(this, view);
-
+        initView();
         dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
@@ -63,7 +63,7 @@ public class LoanTypeDialog {
                 android.R.layout.simple_dropdown_item_1line, tenure));
 
         String[] employment = context.getResources().getStringArray(R.array.employment);
-        spTenure.setAdapter(new ArrayAdapter(context,
+        spEmployment.setAdapter(new ArrayAdapter(context,
                 android.R.layout.simple_dropdown_item_1line, employment));
     }
 
