@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.techclutch.finassist"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -19,7 +19,13 @@ android {
     }
 }
 
+repositories {
+    maven { url 'http://maven.microblink.com' }
+}
+
 dependencies {
+    compile('com.microblink:blinkid:3.10.0@aar') {
+        transitive = true
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
