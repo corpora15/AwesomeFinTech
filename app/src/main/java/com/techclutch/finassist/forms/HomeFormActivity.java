@@ -41,7 +41,7 @@ public class HomeFormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_form);
+        setContentView(R.layout.activity_home_form);0
         ButterKnife.bind(this);
 
         etName.setText(UserDataTron.Get().GetName());
@@ -49,7 +49,9 @@ public class HomeFormActivity extends AppCompatActivity {
         etAddress.setText(UserDataTron.Get().GetAddress());
         etSex.setText(UserDataTron.Get().GetSex());
         etTitle.setText(UserDataTron.Get().GetTitle());
-        etDOB.setText(UserDataTron.Get().mBirthDate.toString());
+
+        String dateStr = UserDataTron.Get().mBirthDate.getDay() + "/" + UserDataTron.Get().mBirthDate.getMonth() + "/" + UserDataTron.Get().mBirthDate.getYear();
+        etDOB.setText(dateStr);
     }
 
     @OnClick(R.id.btn_ok)
