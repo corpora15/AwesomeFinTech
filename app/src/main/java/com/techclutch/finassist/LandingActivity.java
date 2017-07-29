@@ -16,13 +16,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.techclutch.finassist.callbacks.OnLoanTypePopupSaved;
 import com.techclutch.finassist.dummy.DummyContent;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
+import com.techclutch.finassist.loantype.LoanTypeDialog;
 import com.techclutch.finassist.loantype.LoanTypeFragment;
 import com.techclutch.finassist.loantype.LoanTypeItem;
 
 public class LandingActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, LoanStatusFragment.OnListFragmentInteractionListener, LoanTypeFragment.OnListFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, LoanStatusFragment.OnListFragmentInteractionListener,
+        LoanTypeFragment.OnListFragmentInteractionListener, OnLoanTypePopupSaved {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,12 @@ public class LandingActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        initView();
+    }
+
+    private void initView() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fl_placeholder, new LoanTypeFragment()).commit();
     }
 
     @Override
@@ -119,6 +128,11 @@ public class LandingActivity extends AppCompatActivity
 
     @Override
     public void onListFragmentInteraction(LoanTypeItem item) {
+        new LoanTypeDialog().showDialog(this, this);
+    }
+
+    @Override
+    public void setData(String propertyPrice, String loanAmount, String tenure, String income, String employment) {
 
     }
 }
