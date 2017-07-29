@@ -3,14 +3,16 @@ package com.techclutch.finassist;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 
+import OCR.TessOCR;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import OCR.TessOCR;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //mTessOCR = new TessOCR(this, "eng");
+        mTessOCR = new TessOCR(this, "eng");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -39,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             ivPhoto.setImageBitmap(photo);
+            BitmapDrawable drawable = (BitmapDrawable) ivPhoto.getDrawable();
+            Bitmap bitmap = drawable.getBitmap();
+            String result = mTessOCR.getOCRResult(bitmap);
+            Log.d("OCR from Tesseract is ", result);
         }
     }
 }
