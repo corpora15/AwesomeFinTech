@@ -73,25 +73,6 @@ public class LoanStatusFragment extends Fragment {
         return view;
     }
 
-//    private List<LoanTypeItem> getBankList() {
-//        String[] bankName = getResources().getStringArray(R.array.bank_list);
-//        String[] interestRate = getResources().getStringArray(R.array.bank_list_interest_rates);
-//        int[] images = getResources().getIntArray(R.array.bank_list_images);
-//        TypedArray icons = getResources().obtainTypedArray(R.array.bank_list_images);
-//        List<LoanTypeItem> items = new ArrayList<>();
-//
-//        //todo this is mock data
-//        List<String> monthlyPayment = Arrays.asList("500", "400", "300", "500", "400");
-//        List<String> totalPayment = Arrays.asList("5055", "40066", "30250", "55200", "40110");
-//
-//
-//        for(int i = 0; i < images.length; ++i) {
-//            items.add(new BankTypeItem(bankName[i], interestRate[i], monthlyPayment.get(i), totalPayment.get(i), icons.getResourceId(i, 0));
-//        }
-//        icons.recycle();
-//        return items;
-//    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

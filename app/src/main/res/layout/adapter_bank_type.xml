@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_bank_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="RHB"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/iv_bank_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/ic_account_balance"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_monthly_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="RM 299.00"
+            android:layout_below="@id/ll_title"/>
+
+        <TextView
+            android:id="@+id/tv_total_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="RM 29977.00"
+            android:layout_below="@id/tv_monthly_payment"/>
+
+        <TextView
+            android:id="@+id/tv_interest_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="4.5%"
+            android:layout_below="@id/tv_total_payment"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

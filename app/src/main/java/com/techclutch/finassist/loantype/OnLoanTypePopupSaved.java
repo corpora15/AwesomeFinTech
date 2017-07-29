@@ -1,4 +1,4 @@
-package com.techclutch.finassist.callbacks;
+package com.techclutch.finassist.loantype;
 
 /**
  * Created by Arman on 7/30/2017.
