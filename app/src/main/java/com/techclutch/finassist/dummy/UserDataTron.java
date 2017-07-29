@@ -13,7 +13,7 @@ public class UserDataTron {
     public String mAddress = "";
     public String mSex = "";
     public String mTitle = "";
-    public Date mBirthDate;
+    public Date mBirthDate = new Date(0,0,0);
 
     private static UserDataTron _instance = new UserDataTron();
 
@@ -26,4 +26,5 @@ public class UserDataTron {
     public String GetAddress(){return MakeOneliner(mAddress);}
     public String GetSex(){return MakeOneliner(mSex);}
     public String GetTitle(){return MakeOneliner(mTitle);}
+    public String GetDateOfBirth(String separator) { return mBirthDate.getDay() + separator + mBirthDate.getMonth() + separator+ mBirthDate.getYear(); }
 }
