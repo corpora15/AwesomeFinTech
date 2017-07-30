@@ -11,10 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".LandingActivity"
-            android:label="@string/title_activity_landing"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".banktypes.BankTypeActivity"></activity>
+        <activity android:name=".banktypes.BankTypeActivity" />
+        <activity
+            android:name=".questionaires.HomeQuestionaireActivity"
+            android:label="@string/title_activity_home_questionaire"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".forms.HomeFormActivity"></activity>
+        <activity android:name=".uploaddocuments.UploadDocumentActivity"></activity>
     </application>
 
 </manifest>

@@ -29,23 +29,23 @@
 
     <!--todo replace with proper bank logos-->
     <integer-array name="bank_list_images">
-        <item>@drawable/ic_home</item>
-        <item>@drawable/ic_directions_car</item>
-        <item>@drawable/ic_person</item>
-        <item>@drawable/ic_child_friendly</item>
-        <item>@drawable/ic_shopping_cart</item>
+        <item>@drawable/rhb_logo</item>
+        <item>@drawable/cimb_logo</item>
+        <item>@drawable/maybank_logo</item>
+        <item>@drawable/pbb_logo</item>
+        <item>@drawable/ambank_logo</item>
     </integer-array>
 
     <string-array name="bank_list_interest_rates">
-        <item>4.25</item>
-        <item>4.3</item>
-        <item>4.4</item>
-        <item>4.4</item>
-        <item>4.3</item>
+        <item>4.25%</item>
+        <item>4.3%</item>
+        <item>4.4%</item>
+        <item>4.4%</item>
+        <item>4.3%</item>
     </string-array>
 
     <string-array name="tenure">
-        <item>Loan Tenure</item>
+        <item>Select Loan Tenure</item>
         <item>20 years</item>
         <item>25 years</item>
         <item>30 years</item>
@@ -53,9 +53,36 @@
     </string-array>
 
     <string-array name="employment">
-        <item>Employment</item>
+        <item>Select Employment Type</item>
         <item>Salaried - Private</item>
         <item>Salaried - Government</item>
     </string-array>
 
+    <string-array name="propertysubtypes">
+        <item>Bungalow</item>
+        <item>Apartment</item>
+        <item>Condominium</item>
+        <item>Townhouse</item>
+        <item>Terrace</item>
+    </string-array>
+
+    <string-array name="yesno">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="propertyconstructionstatus">
+        <item>Completed</item>
+        <item>Under construction</item>
+    </string-array>
+
+    <string-array name="document_list">
+        <item>@string/document_ic</item>
+        <item>@string/document_payslip</item>
+    </string-array>
+
+    <integer-array name="document_list_images">
+        <item>@drawable/ic_doc_ic</item>
+        <item>@drawable/ic_doc_payslip</item>>
+    </integer-array>
 </resources>

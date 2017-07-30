@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">FinAssist</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="app_name">loanr</string>
     <string name="title_activity_landing">LandingActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -22,4 +21,9 @@
     <string name="bank_maybank">Maybank</string>
     <string name="bank_public_bank">Public Bank</string>
     <string name="bank_ambank">AmBank</string>
+    <string name="title_activity_home_questionaire">HomeQuestionaireActivity</string>
+
+    <!--Document List-->
+    <string name="document_ic">Identification Card</string>
+    <string name="document_payslip">Payslip</string>
 </resources>

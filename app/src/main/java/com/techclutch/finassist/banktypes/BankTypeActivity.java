@@ -1,5 +1,6 @@
 package com.techclutch.finassist.banktypes;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.callbacks.OnBankTypeCallback;
+import com.techclutch.finassist.questionaires.HomeQuestionaireActivity;
+import com.techclutch.finassist.uploaddocuments.UploadDocumentActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,12 +41,11 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
         List<BankTypeItem> items = new ArrayList<>();
 
         //todo this is mock data
-        List<String> monthlyPayment = Arrays.asList("500", "400", "300", "500", "400");
-        List<String> totalPayment = Arrays.asList("5055", "40066", "30250", "55200", "40110");
-
+        List<String> monthlyPayment = Arrays.asList("RM 500", "RM 400", "RM 300", "RM 500", "RM 400");
+        List<String> totalPayment = Arrays.asList("RM 5055", "RM 40066", "RM 30250", "RM 55200", "RM 40110");
 
         for(int i = 0; i < images.length; ++i) {
-            items.add(new BankTypeItem(bankName[i], interestRate[i], monthlyPayment.get(i), totalPayment.get(i), icons.getResourceId(i, 0)));
+            items.add(new BankTypeItem(bankName[i], monthlyPayment.get(i), totalPayment.get(i), interestRate[i], icons.getResourceId(i, 0)));
         }
         icons.recycle();
         return items;
@@ -52,5 +54,7 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
     @Override
     public void onListFragmentInteraction(BankTypeItem item) {
         //go to forms
+        Intent intent = new Intent(this, UploadDocumentActivity.class);
+        startActivity(intent);
     }
 }

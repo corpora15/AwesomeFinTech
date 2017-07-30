@@ -1,5 +1,6 @@
 package com.techclutch.finassist.loanstatus;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import com.techclutch.finassist.R;
 import com.techclutch.finassist.dummy.DummyContent.DummyItem;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
@@ -38,6 +42,17 @@ public class LoanStatusRecyclerViewAdapter extends RecyclerView.Adapter<LoanStat
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
+        holder.tvDetails.setText(mValues.get(position).details);
+
+        if(holder.tvDetails.getText().equals("SUCCESS")) {
+            holder.tvDetails.setTextColor(Color.GREEN);
+        } else if(holder.tvDetails.getText().equals("PENDING")) {
+            holder.tvDetails.setTextColor(Color.parseColor("#d5b60a"));
+        } else if(holder.tvDetails.getText().equals("FAILED")) {
+            holder.tvDetails.setTextColor(Color.RED);
+        } else {
+            holder.tvDetails.setTextColor(Color.BLACK);
+        }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,16 +72,20 @@ public class LoanStatusRecyclerViewAdapter extends RecyclerView.Adapter<LoanStat
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.id)
+        TextView mIdView;
+        @BindView(R.id.content)
+        TextView mContentView;
+        @BindView(R.id.details)
+        TextView tvDetails;
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
         public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            ButterKnife.bind(this, view);
         }
 
         @Override

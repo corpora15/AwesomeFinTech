@@ -1,76 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_property_price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentTop="true">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/et_property_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Property Price"/>
+            android:hint="Property Price (RM)"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_loan_amount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/til_property_price">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/et_loan_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Loan Amount"/>
+            android:hint="Loan Amount (RM)"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <Spinner
         android:id="@+id/sp_tenure"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/til_loan_amount"/>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_income"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/sp_tenure">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/et_income"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Income Per Month"/>
+            android:hint="Average Income Per Month (RM)"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <Spinner
         android:id="@+id/sp_employment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/til_income"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end">
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/btn_ok"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_gravity="end"
-            android:text="OK"
-            android:layout_alignParentRight="true"/>
+            android:text="OK" />
 
         <Button
             android:id="@+id/btn_cancel"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:layout_toLeftOf="@id/btn_ok"/>
-
-
+            android:layout_toLeftOf="@id/btn_ok"
+            android:text="Cancel" />
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

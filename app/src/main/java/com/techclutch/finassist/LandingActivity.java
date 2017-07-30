@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -23,27 +24,21 @@ import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognizerSettings;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
-import com.microblink.results.date.Date;
-
 import com.techclutch.finassist.banktypes.BankTypeActivity;
-import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 import com.techclutch.finassist.dummy.DummyContent;
+import com.techclutch.finassist.dummy.UserDataTron;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
 import com.techclutch.finassist.loantype.LoanTypeDialog;
 import com.techclutch.finassist.loantype.LoanTypeFragment;
 import com.techclutch.finassist.loantype.LoanTypeItem;
+import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 
 public class LandingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LoanStatusFragment.OnListFragmentInteractionListener,
         LoanTypeFragment.OnListFragmentInteractionListener, OnLoanTypePopupSaved {
 
     private static final int MY_REQUEST_CODE = 1500;
-    private String mFullName = "";
-    private String mNRICNumber = "";
-    private String mAddress = "";
-    private String mSex = "";
-    private String mTitle = "";
-    private Date mBirthDate;
+    private String mOwnerNamePreSet = "Arman Izad";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +46,7 @@ public class LandingActivity extends AppCompatActivity
         setContentView(R.layout.activity_landing);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +79,7 @@ public class LandingActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setChecked(true);
         initView();
     }
 
@@ -107,14 +104,18 @@ public class LandingActivity extends AppCompatActivity
                         // you can use getters of MyKadRecognitionResult class to
                         // obtain scanned information
                         if (my_result.isValid() && !my_result.isEmpty()) {
-                            mFullName = my_result.getOwnerFullName();
-                            mNRICNumber = my_result.getNRICNumber();
-                            mBirthDate = my_result.getOwnerBirthDate();
-                            mAddress = my_result.getOwnerAddress();
-                            mSex = my_result.getOwnerSex();
-                            mTitle = my_result.getTitle();
+                            UserDataTron.Get().mFullName = my_result.getOwnerFullName();
+                            UserDataTron.Get().mNRICNumber = my_result.getNRICNumber();
+                            UserDataTron.Get().mBirthDate = my_result.getOwnerBirthDate();
+                            UserDataTron.Get().mAddress = my_result.getOwnerAddress();
+                            UserDataTron.Get().mSex = my_result.getOwnerSex();
+                            UserDataTron.Get().mTitle = my_result.getTitle();
 
-
+                            if(!UserDataTron.Get().mFullName.equals(mOwnerNamePreSet)) {
+                                Snackbar mySnackbar = Snackbar.make(findViewById(R.id.fl_placeholder),
+                                        "Incorrect information detected", Snackbar.LENGTH_LONG);
+                                mySnackbar.show();
+                            }
                         } else {
                             // not all relevant data was scanned, ask user
                             // to try again
@@ -143,7 +144,7 @@ public class LandingActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.landing, menu);
+        //getMenuInflater().inflate(R.menu.landing, menu);
         return true;
     }
 
@@ -162,7 +163,6 @@ public class LandingActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -184,7 +184,7 @@ public class LandingActivity extends AppCompatActivity
 //            mDrawerLayout.closeDrawer(mDrawerList);
 
         } else {
-            Log.e("MainActivity", "Error in creating fragment");
+            Log.e("LandingActivity", "Error in creating fragment");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

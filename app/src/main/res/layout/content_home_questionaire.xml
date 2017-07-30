@@ -5,13 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.techclutch.finassist.MainActivity"
-    tools:showIn="@layout/activity_main">
-
-    <ImageView
-        android:id="@+id/iv_photo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher"/>
+    tools:context="com.techclutch.finassist.questionaires.HomeQuestionaireActivity"
+    tools:showIn="@layout/activity_home_questionaire">
 
 </android.support.constraint.ConstraintLayout>
