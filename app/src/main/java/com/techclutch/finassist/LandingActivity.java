@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -23,21 +24,21 @@ import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognizerSettings;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
-
 import com.techclutch.finassist.banktypes.BankTypeActivity;
-import com.techclutch.finassist.dummy.UserDataTron;
-import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 import com.techclutch.finassist.dummy.DummyContent;
+import com.techclutch.finassist.dummy.UserDataTron;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
 import com.techclutch.finassist.loantype.LoanTypeDialog;
 import com.techclutch.finassist.loantype.LoanTypeFragment;
 import com.techclutch.finassist.loantype.LoanTypeItem;
+import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
 
 public class LandingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LoanStatusFragment.OnListFragmentInteractionListener,
         LoanTypeFragment.OnListFragmentInteractionListener, OnLoanTypePopupSaved {
 
     private static final int MY_REQUEST_CODE = 1500;
+    private String mOwnerNamePreSet = "Arman Izad";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +111,11 @@ public class LandingActivity extends AppCompatActivity
                             UserDataTron.Get().mSex = my_result.getOwnerSex();
                             UserDataTron.Get().mTitle = my_result.getTitle();
 
-
+                            if(!UserDataTron.Get().mFullName.equals(mOwnerNamePreSet)) {
+                                Snackbar mySnackbar = Snackbar.make(findViewById(R.id.fl_placeholder),
+                                        "Incorrect information detected", Snackbar.LENGTH_LONG);
+                                mySnackbar.show();
+                            }
                         } else {
                             // not all relevant data was scanned, ask user
                             // to try again
