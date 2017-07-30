@@ -27,7 +27,6 @@
         <item>@string/bank_ambank</item>
     </string-array>
 
-    <!--todo replace with proper bank logos-->
     <integer-array name="bank_list_images">
         <item>@drawable/rhb_logo</item>
         <item>@drawable/cimb_logo</item>
@@ -41,6 +40,21 @@
         <item>4.3%</item>
         <item>4.4%</item>
         <item>4.4%</item>
+        <item>4.3%</item>
+    </string-array>
+
+    <integer-array name="furniture_list_images">
+        <item>@drawable/ikea_logo</item>
+        <item>@drawable/hv_logo</item>
+    </integer-array>
+
+    <string-array name="merchant_list">
+        <item>@string/merchant_ikea</item>
+        <item>@string/merchant_harvey</item>
+    </string-array>
+
+    <string-array name="merchant_list_interest_rates">
+        <item>4.25%</item>
         <item>4.3%</item>
     </string-array>
 

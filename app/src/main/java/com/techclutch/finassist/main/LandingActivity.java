@@ -22,6 +22,8 @@ import com.techclutch.finassist.loantype.LoanTypeDialog;
 import com.techclutch.finassist.loantype.LoanTypeFragment;
 import com.techclutch.finassist.loantype.LoanTypeItem;
 import com.techclutch.finassist.loantype.OnLoanTypePopupSaved;
+import com.techclutch.finassist.merchants.FurnitureLoansActivity;
+import com.techclutch.finassist.uploaddocuments.UploadDocumentActivity;
 
 public class LandingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LoanStatusFragment.OnListFragmentInteractionListener,

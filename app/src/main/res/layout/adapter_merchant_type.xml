@@ -19,7 +19,7 @@
         android:paddingBottom="8dp">
 
         <ImageView
-            android:id="@+id/iv_bank_logo"
+            android:id="@+id/iv_logo"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             tools:src="@drawable/ic_account_balance"
@@ -28,7 +28,7 @@
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_bank_name"
+            android:id="@+id/tv_merchant_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -41,20 +41,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/iv_bank_logo"
+            android:layout_below="@id/iv_logo"
             android:weightSum="2">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Monthly Repayment"/>
+                android:text="Eligible Loan"/>
 
             <TextView
-                android:id="@+id/tv_monthly_payment"
+                android:id="@+id/tv_eligible_loan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_bank_name"
+                android:layout_below="@id/tv_merchant_name"
                 tools:text="RM 299.00"
                 android:layout_weight="1"/>
 
@@ -72,10 +72,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Flexi loan?"/>
+                android:text="Total Repayment"/>
 
             <TextView
-                android:id="@+id/tv_total_payment"
+                android:id="@+id/tv_total_repayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_monthly_payment"
@@ -85,25 +85,53 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_interest_rate"
+        android:id="@+id/ll_interest_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ll_total_payment"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Interest Rate"/>
+
+        <TextView
+            android:id="@+id/tv_interest_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_total_payment"
+            tools:text="4.5%"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_eligible_discount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/ll_total_payment"
+            android:layout_below="@id/ll_interest_rate"
             android:weightSum="2">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Interest Rate"/>
+                android:textSize="20dp"
+                android:textColor="@color/LightBlue"
+                android:text="Eligible discount"/>
 
             <TextView
-                android:id="@+id/tv_interest_rate"
+                android:id="@+id/tv_eligible_discount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_total_payment"
-                tools:text="4.5%"
+                android:textSize="40dp"
+                android:textColor="@color/greenlight"
+                tools:text="10%"
                 android:layout_weight="1"/>
 
         </LinearLayout>

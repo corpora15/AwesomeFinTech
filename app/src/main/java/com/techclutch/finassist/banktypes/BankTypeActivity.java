@@ -40,8 +40,8 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
         List<BankTypeItem> items = new ArrayList<>();
 
         //todo this is mock data
-        List<String> monthlyPayment = Arrays.asList("RM 512", "RM 498", "RM 548", "RM 520", "RM 530");
-        List<String> totalPayment = Arrays.asList("RM 490875", "RM 486908", "RM 512485", "RM 499875", "RM 502394");
+        List<String> monthlyPayment = Arrays.asList("RM 2320", "RM 2325", "RM 2317", "RM 2317", "RM 2335");
+        List<String> totalPayment = Arrays.asList("Yes", "Yes", "No", "Yes", "Yes");
 
         for(int i = 0; i < images.length; ++i) {
             items.add(new BankTypeItem(bankName[i], monthlyPayment.get(i), totalPayment.get(i), interestRate[i], icons.getResourceId(i, 0)));

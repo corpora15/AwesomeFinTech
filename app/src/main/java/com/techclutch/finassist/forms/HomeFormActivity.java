@@ -1,8 +1,8 @@
 package com.techclutch.finassist.forms;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,9 +26,6 @@ public class HomeFormActivity extends AppCompatActivity {
 
     @BindView(R.id.et_sex)
     EditText etSex;
-
-    @BindView(R.id.et_title)
-    EditText etTitle;
 
     @BindView(R.id.et_dob)
     EditText etDOB;
