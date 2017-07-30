@@ -6,12 +6,10 @@ package com.techclutch.finassist.uploaddocuments;
 
 public class DocumentItem {
     private String name;
-    private Integer imageResource;
     private boolean isCompleted;
 
-    public DocumentItem(String name, Integer imageResource) {
+    public DocumentItem(String name) {
         this.name = name;
-        this.imageResource = imageResource;
         this.isCompleted = false;
     }
 
@@ -21,14 +19,6 @@ public class DocumentItem {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getImageResource() {
-        return imageResource;
-    }
-
-    public void setImageResource(Integer imageResource) {
-        this.imageResource = imageResource;
     }
 
     public boolean getIsCompleted() { return isCompleted; }

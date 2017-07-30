@@ -41,11 +41,9 @@ public class UploadDocumentsAdapter extends RecyclerView.Adapter<UploadDocuments
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.ivDocumentImage.setImageDrawable(ContextCompat.getDrawable(context, holder.mItem.getImageResource()));
         holder.tvDocumentName.setText(holder.mItem.getName());
         // todo: handle mouse click
         holder.ivDocumentStatus.setImageDrawable(ContextCompat.getDrawable(context, holder.mItem.getIsCompleted() ?  R.drawable.ic_doc_completed : R.drawable.ic_doc_missing));
-
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +63,6 @@ public class UploadDocumentsAdapter extends RecyclerView.Adapter<UploadDocuments
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.iv_doc_logo)
-        ImageView ivDocumentImage;
         @BindView(R.id.tv_doc_name)
         TextView tvDocumentName;
         @BindView(R.id.iv_doc_status)
