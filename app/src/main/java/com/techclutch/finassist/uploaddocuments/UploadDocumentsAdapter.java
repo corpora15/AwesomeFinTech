@@ -34,7 +34,7 @@ public class UploadDocumentsAdapter extends RecyclerView.Adapter<UploadDocuments
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_loantype, parent, false);
+                .inflate(R.layout.adapter_upload_document, parent, false);
         return new ViewHolder(view);
     }
 
