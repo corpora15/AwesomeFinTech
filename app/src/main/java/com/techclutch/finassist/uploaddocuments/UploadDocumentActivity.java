@@ -57,13 +57,11 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
 
     private List<DocumentItem> getDocumentList() {
         String[] documentNames = getResources().getStringArray(R.array.document_list);
-        TypedArray icons = getResources().obtainTypedArray(R.array.document_list_images);
         List<DocumentItem> items = new ArrayList<>();
 
-        for(int i = 0; i < icons.length(); ++i) {
-            items.add(new DocumentItem(documentNames[i], icons.getResourceId(i, 0)));
+        for(int i = 0; i < documentNames.length; ++i) {
+            items.add(new DocumentItem(documentNames[i]));
         }
-        icons.recycle();
         return items;
     }
 
