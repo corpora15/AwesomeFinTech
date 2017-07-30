@@ -1,18 +1,16 @@
 package com.techclutch.finassist.bankfeedbacks;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Spinner;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 
-import com.techclutch.finassist.LandingActivity;
 import com.techclutch.finassist.R;
-import com.techclutch.finassist.forms.HomeFormActivity;
+import com.techclutch.finassist.main.LandingActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import android.widget.Button;
 
 public class BankTentativeFeedbackActivity extends AppCompatActivity {
 

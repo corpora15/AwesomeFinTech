@@ -6,12 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.techclutch.finassist.LandingActivity;
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.bankfeedbacks.BankTentativeFeedbackActivity;
-import com.techclutch.finassist.dummy.UserDataTron;
-
-import com.microblink.results.date.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,13 +42,13 @@ public class HomeFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_form);
         ButterKnife.bind(this);
 
-        etName.setText(UserDataTron.Get().GetName());
-        etNRIC.setText(UserDataTron.Get().GetNRIC());
-        etAddress.setText(UserDataTron.Get().GetAddress());
-        etSex.setText(UserDataTron.Get().GetSex());
-        etTitle.setText(UserDataTron.Get().GetTitle());
+        etName.setText(UserData.Get().GetName());
+        etNRIC.setText(UserData.Get().GetNRIC());
+        etAddress.setText(UserData.Get().GetAddress());
+        etSex.setText(UserData.Get().GetSex());
+        etTitle.setText(UserData.Get().GetTitle());
 
-        etDOB.setText(UserDataTron.Get().GetDateOfBirth("-"));
+        etDOB.setText(UserData.Get().GetDateOfBirth("-"));
     }
 
     @OnClick(R.id.btn_ok)

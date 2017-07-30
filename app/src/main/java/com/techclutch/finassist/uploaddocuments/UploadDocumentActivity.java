@@ -18,7 +18,7 @@ import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.callbacks.OnDocumentTypeCallback;
-import com.techclutch.finassist.dummy.UserDataTron;
+import com.techclutch.finassist.forms.UserData;
 import com.techclutch.finassist.questionaires.HomeQuestionaireActivity;
 
 import java.util.ArrayList;
@@ -125,12 +125,12 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
                         // you can use getters of MyKadRecognitionResult class to
                         // obtain scanned information
                         if (my_result.isValid() && !my_result.isEmpty()) {
-                            UserDataTron.Get().mFullName = my_result.getOwnerFullName();
-                            UserDataTron.Get().mNRICNumber = my_result.getNRICNumber();
-                            UserDataTron.Get().mBirthDate = my_result.getOwnerBirthDate();
-                            UserDataTron.Get().mAddress = my_result.getOwnerAddress();
-                            UserDataTron.Get().mSex = my_result.getOwnerSex();
-                            UserDataTron.Get().mTitle = my_result.getTitle();
+                            UserData.Get().mFullName = my_result.getOwnerFullName();
+                            UserData.Get().mNRICNumber = my_result.getNRICNumber();
+                            UserData.Get().mBirthDate = my_result.getOwnerBirthDate();
+                            UserData.Get().mAddress = my_result.getOwnerAddress();
+                            UserData.Get().mSex = my_result.getOwnerSex();
+                            UserData.Get().mTitle = my_result.getTitle();
 
                             items.get(0).setIsCompleted(true);
                             adapter.notifyDataSetChanged();
