@@ -8,6 +8,8 @@ import android.widget.Spinner;
 import com.techclutch.finassist.LandingActivity;
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.forms.HomeFormActivity;
+import com.techclutch.finassist.merchants.FurnitureLoansActivity;
+import com.techclutch.finassist.uploaddocuments.UploadDocumentActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +20,9 @@ public class BankTentativeFeedbackActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_done)
     Button btnDone;
+
+    @BindView(R.id.btn_furniture)
+    Button btnFurniture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,12 @@ public class BankTentativeFeedbackActivity extends AppCompatActivity {
     @OnClick(R.id.btn_done)
     void onDoneClicked() {
         Intent intent = new Intent(this, LandingActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.btn_furniture)
+    void onFurnitureClicked() {
+        Intent intent = new Intent(this, FurnitureLoansActivity.class);
         startActivity(intent);
     }
 }

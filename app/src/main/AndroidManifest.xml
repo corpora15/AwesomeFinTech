@@ -35,7 +35,13 @@
             android:name=".questionaires.HomeQuestionaireActivity" />
         <activity android:name=".forms.HomeFormActivity" />
         <activity android:name=".uploaddocuments.UploadDocumentActivity" />
-		<activity android:name=".bankfeedbacks.BankTentativeFeedbackActivity"></activity>
+
+        <activity android:name=".bankfeedbacks.BankTentativeFeedbackActivity" />
+        <activity android:name=".scanmykad.ScanMyKadActivity" />
+        <activity
+            android:name=".merchants.FurnitureLoansActivity"
+            android:label="@string/title_activity_furniture_loans"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
