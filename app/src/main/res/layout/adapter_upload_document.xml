@@ -5,21 +5,12 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <ImageView
-        android:id="@+id/iv_doc_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:src="@drawable/ic_account_balance"
-        android:layout_alignParentLeft="true"
-        android:visibility="gone"/>
-
     <TextView
         android:id="@+id/tv_doc_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         tools:text="Document Name"
-        android:layout_toRightOf="@id/iv_doc_logo"
         android:layout_centerVertical="true"
         android:layout_marginLeft="8dp"/>
 
