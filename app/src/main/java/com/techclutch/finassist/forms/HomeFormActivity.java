@@ -1,17 +1,14 @@
 package com.techclutch.finassist.forms;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.techclutch.finassist.LandingActivity;
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.bankfeedbacks.BankTentativeFeedbackActivity;
 import com.techclutch.finassist.dummy.UserDataTron;
-
-import com.microblink.results.date.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,9 +28,6 @@ public class HomeFormActivity extends AppCompatActivity {
     @BindView(R.id.et_sex)
     EditText etSex;
 
-    @BindView(R.id.et_title)
-    EditText etTitle;
-
     @BindView(R.id.et_dob)
     EditText etDOB;
 
@@ -50,7 +44,6 @@ public class HomeFormActivity extends AppCompatActivity {
         etNRIC.setText(UserDataTron.Get().GetNRIC());
         etAddress.setText(UserDataTron.Get().GetAddress());
         etSex.setText(UserDataTron.Get().GetSex());
-        etTitle.setText(UserDataTron.Get().GetTitle());
 
         etDOB.setText(UserDataTron.Get().GetDateOfBirth("-"));
     }
