@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.callbacks.OnBankTypeCallback;
-import com.techclutch.finassist.questionaires.HomeQuestionaireActivity;
 import com.techclutch.finassist.uploaddocuments.UploadDocumentActivity;
 
 import java.util.ArrayList;
@@ -41,8 +40,8 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
         List<BankTypeItem> items = new ArrayList<>();
 
         //todo this is mock data
-        List<String> monthlyPayment = Arrays.asList("RM 500", "RM 400", "RM 300", "RM 500", "RM 400");
-        List<String> totalPayment = Arrays.asList("RM 5055", "RM 40066", "RM 30250", "RM 55200", "RM 40110");
+        List<String> monthlyPayment = Arrays.asList("RM 512", "RM 498", "RM 548", "RM 520", "RM 530");
+        List<String> totalPayment = Arrays.asList("RM 490875", "RM 486908", "RM 512485", "RM 499875", "RM 502394");
 
         for(int i = 0; i < images.length; ++i) {
             items.add(new BankTypeItem(bankName[i], monthlyPayment.get(i), totalPayment.get(i), interestRate[i], icons.getResourceId(i, 0)));

@@ -40,7 +40,8 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
     Button btnProceed;
 
     private static final int MY_REQUEST_CODE = 1500;
-    private String mOwnerNamePreSet = "Arman Izad";
+    private List<DocumentItem> items;
+    private UploadDocumentsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,9 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
         });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new UploadDocumentsAdapter(this, getDocumentList(), this));
+        items = getDocumentList();
+        adapter = new UploadDocumentsAdapter(this, items, this);
+        recyclerView.setAdapter(adapter);
     }
 
     private List<DocumentItem> getDocumentList() {
@@ -128,6 +131,9 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
                             UserDataTron.Get().mAddress = my_result.getOwnerAddress();
                             UserDataTron.Get().mSex = my_result.getOwnerSex();
                             UserDataTron.Get().mTitle = my_result.getTitle();
+
+                            items.get(0).setIsCompleted(true);
+                            adapter.notifyDataSetChanged();
                         } else {
                             // not all relevant data was scanned, ask user
                             // to try again
