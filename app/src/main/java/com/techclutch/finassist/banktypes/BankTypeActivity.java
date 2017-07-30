@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.callbacks.OnBankTypeCallback;
 import com.techclutch.finassist.questionaires.HomeQuestionaireActivity;
+import com.techclutch.finassist.uploaddocuments.UploadDocumentActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,8 +54,7 @@ public class BankTypeActivity extends AppCompatActivity implements OnBankTypeCal
     @Override
     public void onListFragmentInteraction(BankTypeItem item) {
         //go to forms
-        //TODO: Put this after Madz
-        Intent intent = new Intent(this, HomeQuestionaireActivity.class);
+        Intent intent = new Intent(this, UploadDocumentActivity.class);
         startActivity(intent);
     }
 }

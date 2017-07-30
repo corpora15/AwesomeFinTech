@@ -1,5 +1,6 @@
 package com.techclutch.finassist.uploaddocuments;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.util.TypedValue;
 
 import com.techclutch.finassist.R;
 import com.techclutch.finassist.callbacks.OnDocumentTypeCallback;
+import com.techclutch.finassist.questionaires.HomeQuestionaireActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,5 +52,7 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
     @Override
     public void onListFragmentInteraction(DocumentItem item) {
         //go to forms
+        Intent intent = new Intent(this, HomeQuestionaireActivity.class);
+        startActivity(intent);
     }
 }

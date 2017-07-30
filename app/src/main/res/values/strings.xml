@@ -21,12 +21,9 @@
     <string name="bank_maybank">Maybank</string>
     <string name="bank_public_bank">Public Bank</string>
     <string name="bank_ambank">AmBank</string>
-<<<<<<< HEAD
     <string name="title_activity_home_questionaire">HomeQuestionaireActivity</string>
-=======
 
     <!--Document List-->
     <string name="document_ic">Identification Card</string>
     <string name="document_payslip">Payslip</string>
->>>>>>> more on document upload
 </resources>
