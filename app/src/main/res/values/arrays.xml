@@ -37,11 +37,11 @@
     </integer-array>
 
     <string-array name="bank_list_interest_rates">
-        <item>4.25</item>
-        <item>4.3</item>
-        <item>4.4</item>
-        <item>4.4</item>
-        <item>4.3</item>
+        <item>4.25%</item>
+        <item>4.3%</item>
+        <item>4.4%</item>
+        <item>4.4%</item>
+        <item>4.3%</item>
     </string-array>
 
     <string-array name="tenure">

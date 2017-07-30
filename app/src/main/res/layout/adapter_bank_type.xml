@@ -12,50 +12,101 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/ll_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_bank_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                tools:text="RHB" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_monthly_payment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ll_title"
-            tools:text="RM 299.00" />
-
-        <TextView
-            android:id="@+id/tv_total_payment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_monthly_payment"
-            tools:text="RM 29977.00" />
-
-        <TextView
-            android:id="@+id/tv_interest_rate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_total_payment"
-            tools:text="4.5%" />
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
         <ImageView
             android:id="@+id/iv_bank_logo"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             tools:src="@drawable/ic_account_balance"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="RHB"
+            android:layout_alignParentTop="true"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/ll_monthly_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/iv_bank_logo"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Monthly Repayment"/>
+
+            <TextView
+                android:id="@+id/tv_monthly_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_bank_name"
+                tools:text="RM 299.00"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_total_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ll_monthly_payment"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Repayment"/>
+
+            <TextView
+                android:id="@+id/tv_total_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_monthly_payment"
+                tools:text="RM 29977.00"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_interest_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ll_total_payment"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Interest Rate"/>
+
+            <TextView
+                android:id="@+id/tv_interest_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_total_payment"
+                tools:text="4.5%"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

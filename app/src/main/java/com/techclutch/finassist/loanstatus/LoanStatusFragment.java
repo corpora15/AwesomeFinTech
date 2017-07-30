@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.techclutch.finassist.R;
-import com.techclutch.finassist.dummy.DummyContent;
 import com.techclutch.finassist.dummy.DummyContent.DummyItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -68,7 +70,12 @@ public class LoanStatusFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new LoanStatusRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            List<DummyItem> items = new ArrayList<DummyItem>();
+            items.add(new DummyItem("123456", "Mortgage Loan with RHB", "SUCESS"));
+            items.add(new DummyItem("121314", "Personal Loan with CIMB", "PENDING"));
+            items.add(new DummyItem("318474", "Mortgage loan with Maybank", "FAILED"));
+            recyclerView.setAdapter(new LoanStatusRecyclerViewAdapter(items, mListener));
         }
         return view;
     }
