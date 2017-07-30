@@ -26,4 +26,6 @@
     <!--Document List-->
     <string name="document_ic">Identification Card</string>
     <string name="document_payslip">Payslip</string>
+    <string name="document_epf">EPF</string>
+    <string name="document_bank_statement">Bank Statement</string>
 </resources>

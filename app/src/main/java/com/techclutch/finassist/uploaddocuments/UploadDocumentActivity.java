@@ -53,7 +53,7 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
 
     @Override
     public void onListFragmentInteraction(DocumentItem item) {
-        //go to forms
+        // todo: do snapshot for orc process
         Intent intent = new Intent(this, HomeQuestionaireActivity.class);
         startActivity(intent);
     }
