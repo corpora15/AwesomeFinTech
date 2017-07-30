@@ -1,12 +1,12 @@
 package com.techclutch.finassist.uploaddocuments;
 
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 
 import com.microblink.activity.ScanCard;
@@ -49,7 +49,16 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Please scan all documents listed below");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setTitle("Scan all documents below");
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new UploadDocumentsAdapter(this, getDocumentList(), this));
@@ -67,12 +76,6 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
 
     @Override
     public void onListFragmentInteraction(DocumentItem item) {
- 		Intent intent = new Intent(this, HomeQuestionaireActivity.class);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.btn_proceed)
-    void onProceedClicked() {
         //go to scanning
         Intent intent = new Intent(UploadDocumentActivity.this, ScanCard.class);
 
@@ -89,6 +92,12 @@ public class UploadDocumentActivity extends AppCompatActivity implements OnDocum
 
         // Starting Activity
         startActivityForResult(intent, MY_REQUEST_CODE);
+    }
+
+    @OnClick(R.id.btn_proceed)
+    void onProceedClicked() {
+        Intent intent = new Intent(this, HomeQuestionaireActivity.class);
+        startActivity(intent);
     }
 
 
