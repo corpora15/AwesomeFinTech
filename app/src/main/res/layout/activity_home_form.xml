@@ -26,11 +26,9 @@
     </android.support.v7.widget.Toolbar>
 
     <android.support.v4.widget.NestedScrollView
-        android:layout_width="368dp"
-        android:layout_height="551dp"
 
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_marginTop="55dp"
@@ -168,6 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginRight="20dp"
                     android:text="GO!"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_alignParentRight="true"/>

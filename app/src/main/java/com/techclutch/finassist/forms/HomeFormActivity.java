@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.techclutch.finassist.LandingActivity;
 import com.techclutch.finassist.R;
+import com.techclutch.finassist.bankfeedbacks.BankTentativeFeedbackActivity;
 import com.techclutch.finassist.dummy.UserDataTron;
 
 import com.microblink.results.date.Date;
@@ -55,7 +57,7 @@ public class HomeFormActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_ok)
     void onOkClicked() {
-//        Intent intent = new Intent(this, HomeFormActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, BankTentativeFeedbackActivity.class);
+        startActivity(intent);
     }
 }

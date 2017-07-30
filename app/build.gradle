@@ -23,6 +23,7 @@ repositories {
     maven { url 'http://maven.microblink.com' }
 }
 
+
 dependencies {
     compile('com.microblink:blinkid:3.10.0@aar') {
         transitive = true
@@ -41,4 +42,5 @@ dependencies {
         testCompile 'junit:junit:4.12'
         annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     }
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

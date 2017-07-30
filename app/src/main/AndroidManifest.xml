@@ -26,8 +26,9 @@
             android:name=".questionaires.HomeQuestionaireActivity"
             android:label="@string/title_activity_home_questionaire"
             android:theme="@style/AppTheme" />
-        <activity android:name=".forms.HomeFormActivity"></activity>
-        <activity android:name=".uploaddocuments.UploadDocumentActivity"></activity>
+        <activity android:name=".forms.HomeFormActivity" />
+        <activity android:name=".uploaddocuments.UploadDocumentActivity" />
+        <activity android:name=".bankfeedbacks.BankTentativeFeedbackActivity"></activity>
     </application>
 
 </manifest>
