@@ -76,4 +76,13 @@
         <item>Under construction</item>
     </string-array>
 
+    <string-array name="document_list">
+        <item>@string/document_ic</item>
+        <item>@string/document_payslip</item>
+    </string-array>
+
+    <integer-array name="document_list_images">
+        <item>@drawable/ic_doc_ic</item>
+        <item>@drawable/ic_doc_payslip</item>>
+    </integer-array>
 </resources>
