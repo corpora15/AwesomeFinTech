@@ -28,7 +28,8 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".forms.HomeFormActivity" />
         <activity android:name=".uploaddocuments.UploadDocumentActivity" />
-        <activity android:name=".bankfeedbacks.BankTentativeFeedbackActivity"></activity>
+		<activity android:name=".bankfeedbacks.BankTentativeFeedbackActivity"></activity>
+		<activity android:name=".scanmykad.ScanMyKadActivity"></activity>       
     </application>
 
 </manifest>
