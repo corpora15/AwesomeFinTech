@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.techclutch.finassist.banktypes.BankTypeActivity;
-import com.techclutch.finassist.dummy.DummyContent;
+import com.techclutch.finassist.loanstatus.LoanStatusItem;
 import com.techclutch.finassist.loanstatus.LoanStatusFragment;
 import com.techclutch.finassist.loantype.LoanTypeDialog;
 import com.techclutch.finassist.loantype.LoanTypeFragment;
@@ -113,7 +113,7 @@ public class LandingActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(LoanStatusItem.DummyItem item) {
 
     }
 

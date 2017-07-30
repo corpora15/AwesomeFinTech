@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.techclutch.finassist.R;
-import com.techclutch.finassist.dummy.DummyContent.DummyItem;
+import com.techclutch.finassist.loanstatus.LoanStatusItem.DummyItem;
 
 import java.util.List;
 

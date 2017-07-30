@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.techclutch.finassist.R;
-import com.techclutch.finassist.dummy.DummyContent.DummyItem;
+import com.techclutch.finassist.loanstatus.LoanStatusItem.DummyItem;
 
 import java.util.ArrayList;
 import java.util.List;

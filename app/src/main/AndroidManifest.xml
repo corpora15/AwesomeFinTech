@@ -32,12 +32,10 @@
         </activity>
         <activity android:name=".banktypes.BankTypeActivity" />
         <activity
-            android:name=".questionaires.HomeQuestionaireActivity"
-            android:label="@string/title_activity_home_questionaire" />
+            android:name=".questionaires.HomeQuestionaireActivity" />
         <activity android:name=".forms.HomeFormActivity" />
         <activity android:name=".uploaddocuments.UploadDocumentActivity" />
 		<activity android:name=".bankfeedbacks.BankTentativeFeedbackActivity"></activity>
-		<activity android:name=".scanmykad.ScanMyKadActivity"></activity>       
     </application>
 
 </manifest>
